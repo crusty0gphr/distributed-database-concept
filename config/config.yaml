@@ -1,0 +1,25 @@
+sharding:
+  total_shards: 3
+  shard_ids:
+    - 1
+    - 2
+    - 3
+  shard_keys:
+    - key_range_start: 0
+      key_range_end: 1000
+      shard_id: 1
+    - key_range_start: 1001
+      key_range_end: 2000
+      shard_id: 2
+    - key_range_start: 2001
+      key_range_end: 3000
+      shard_id: 3
+
+storage:
+  data_directory: /var/lib/my_database/data
+  index_directory: /var/lib/my_database/indexes
+  replication_factor: 2
+
+logging:
+  level: INFO
+  file: /var/log/my_database.log
